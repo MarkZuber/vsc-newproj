@@ -1,70 +1,43 @@
 # vsc-newproj README
 
-This is the README for your extension "vsc-newproj". After writing up a brief description, we recommend including the following sections.
+This is a VSCode Extension to enable quick creation of new projects in a variety of languages. It will create the project type you wish in the language you select and then open a new workspace window in that project directory to get working right away.
+
+I always found it to be too many steps have to go out to the command line and create a project in the right spot and then open it in VSCode. So this lets you do it right from with VSCode itself.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Using the command palette:
 
-For example if there is an image subfolder under your extension project workspace:
+- Run the "Create New Project" command.
+- Then pick your language (e.g. Rust, Dotnet)
+- Then pick the subtype of the project (e.g lib/bin for Rust or console/classlib for Dotnet)
+- Then pick the parent directory of the project
+- Then type in a name for the project itself. This will also be the child directory from the parent where the project code will end up.
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+After this is done, the extension will generate your code, for example using cargo or the dotnet command line) and open a new workspace for VSCode in your target directory so you can immediately get to work.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+For any languages you wish to use (e.g. Rust, Dotnet) you will need the appropriate tools already installed.
+
+For Rust, it runs "cargo new" so you'll need to follow the instructions to install Rust/Cargo on your machine.
+
+Similar for Dotnet.
+
+Other languages coming later as there is need/demand.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+The extension currently does not have any settings. Open to ideas if configuration options for the extension would make sense.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None yet, brand new extension.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+Initial release of vsc-newproj
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+---
