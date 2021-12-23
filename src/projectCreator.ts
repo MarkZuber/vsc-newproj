@@ -1,7 +1,8 @@
 import * as path from "path";
 import * as vscode from "vscode";
-import { execa } from "execa";
-
+import * as util from "util";
+import * as cp from "child_process";
+const exec = util.promisify(cp.exec);
 export abstract class ProjectType {
   constructor(private shortDesc: string) {}
 
@@ -28,7 +29,7 @@ class RustProjectType extends ProjectType {
     const command = `cargo new --${this.getShortDesc()} ${targetDir}`;
 
     try {
-      const { stdout, stderr } = await execa(command);
+      const { stdout, stderr } = await exec(command);
       console.log("stdout: " + stdout);
       console.log("stderr: " + stderr);
 
