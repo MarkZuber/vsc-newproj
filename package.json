@@ -9,7 +9,6 @@
     "categories": [
         "Other"
     ],
-    "type": "module",
     "activationEvents": [
         "onCommand:vsc-newproj.createNewProject"
     ],
