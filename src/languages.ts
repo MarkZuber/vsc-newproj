@@ -1,6 +1,7 @@
 import * as path from "path";
 import { ProjectLanguage } from "./projectLanguage";
 import { ProjectType } from "./projectType";
+import * as fs from "fs-extra";
 
 export class RustProjectType extends ProjectType {
   constructor(shortDesc: string) {
@@ -33,7 +34,8 @@ export class DotnetProjectType extends ProjectType {
     projectName: string
   ): Promise<void> {
     const projectDir = path.join(directoryPath, projectName.replace(" ", ""));
-    const command = `dotnet new --${this.getShortDesc()} --output ${projectDir}`;
+    await fs.mkdirp(projectDir);
+    const command = `dotnet new ${this.getShortDesc()} --output ${projectDir}`;
     await this.executeCommandAndOpenProject(command, projectDir);
   }
 }
