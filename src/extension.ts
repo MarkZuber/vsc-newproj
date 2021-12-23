@@ -7,8 +7,6 @@ export async function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "vsc-newproj.createNewProject",
     async () => {
-      vscode.window.showInformationMessage("Creating new project...!");
-
       const creator = new ProjectCreator();
       const selectedLanguage = await vscode.window.showQuickPick(
         creator
