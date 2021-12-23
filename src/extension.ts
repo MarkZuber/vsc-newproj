@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
-import { ProjectCreator, ProjectLanguage } from "./projectCreator";
+import { ProjectCreator } from "./projectCreator";
 
-// called when extension is activated
 export async function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsc-newproj" is now active!');
 
@@ -12,7 +11,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
       const creator = new ProjectCreator();
       const selectedLanguage = await vscode.window.showQuickPick(
-        creator.getProjectLanguages().map((x) => x.getName()),
+        creator
+          .getProjectLanguages()
+          .map((x) => x.getName())
+          .sort(),
         { title: "Select the Language for your new project" }
       );
       if (selectedLanguage) {
@@ -45,13 +47,7 @@ export async function activate(context: vscode.ExtensionContext) {
                 const dirPath = fileUri[0].path;
 
                 if (projectName) {
-                  const commandRun = await projectType.createProject(
-                    dirPath,
-                    projectName
-                  );
-                  vscode.window.showInformationMessage(
-                    `We ran this command: ${commandRun}`
-                  );
+                  await projectType.createProject(dirPath, projectName);
                 }
               }
             }
@@ -64,5 +60,4 @@ export async function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable);
 }
 
-// called when extension is deactivated
 export function deactivate() {}
