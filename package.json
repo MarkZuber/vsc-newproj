@@ -1,7 +1,13 @@
 {
     "name": "vsc-newproj",
     "displayName": "vsc-newproj",
+    "publisher": "zube",
     "description": "New Project Creator for VSCode",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/markzuber/vsc-newproj"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.63.0"
