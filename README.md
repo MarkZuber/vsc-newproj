@@ -36,7 +36,11 @@ None yet, brand new extension.
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.2
+
+Add --vcs git to cargo new to ensure .gitignore is created.
+
+### 0.0.1
 
 Initial release of vsc-newproj
 
