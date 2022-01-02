@@ -13,7 +13,7 @@ export class RustProjectType extends ProjectType {
     projectName: string
   ): Promise<void> {
     const projectDir = path.join(directoryPath, projectName.replace(" ", ""));
-    const command = `cargo new --${this.getShortDesc()} ${projectDir}`;
+    const command = `cargo new --vcs git --${this.getShortDesc()} ${projectDir}`;
     await this.executeCommandAndOpenProject(command, projectDir);
   }
 }
