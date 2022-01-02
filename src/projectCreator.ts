@@ -15,7 +15,7 @@ export class ProjectCreator {
   public getProjectLanguageByName(
     languageName: string
   ): ProjectLanguage | undefined {
-    const filtered = this.languages.filter((x) => x.getName() === languageName);
+    const filtered = this.languages.filter((x) => x.getName().toLowerCase() === languageName.toLowerCase());
     if (filtered.length === 1) {
       return filtered[0];
     }

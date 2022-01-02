@@ -25,7 +25,24 @@
                 "command": "vsc-newproj.createNewProject",
                 "title": "Create New Project"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "VSC NewProj",
+            "properties": {
+                "vsc-newproj.defaultProjectRoot": {
+                    "type": "string",
+                    "description": "Specifies the default project root for new projects"
+                },
+                "vsc-newproj.defaultLanguage": {
+                  "type": "string",
+                  "description": "Specifies the default language for new projects"
+                },
+                "vsc-newproj.defaultProjectType": {
+                  "type": "string",
+                  "description": "Specifies the default project type for new projects.  Must associate with the defaultLanguage."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "yarn run compile",

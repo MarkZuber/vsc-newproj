@@ -1,7 +1,7 @@
 import { ProjectType } from "./projectType";
 
 export class ProjectLanguage {
-  constructor(private name: string, private projectTypes: ProjectType[]) {}
+  constructor(private name: string, private projectTypes: ProjectType[]) { }
   public getName(): string {
     return this.name;
   }
@@ -12,7 +12,7 @@ export class ProjectLanguage {
 
   public getProjectTypeByShortDesc(shortDesc: string): ProjectType | undefined {
     const filtered = this.projectTypes.filter(
-      (x) => x.getShortDesc() === shortDesc
+      (x) => x.getShortDesc().toLowerCase() === shortDesc.toLowerCase()
     );
     return filtered.length === 1 ? filtered[0] : undefined;
   }
